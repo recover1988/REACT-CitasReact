@@ -116,3 +116,9 @@ Que son el index.html y todos los archivos dentro de `src` que tengan extension 
 Son:
 Tailwind Intellsense
 CSS Peek
+
+### Algunas clases
+- `md:` media query para pantallas medianas
+- `lg:` large query para pantallas grandes
+- `transition-all` para agregar animacion
+- `font-black` para agregar ancho a las letras
