@@ -58,3 +58,61 @@ rafce
 rfce
 rcc
 ```
+
+## Escribir CSS en React
+
+Existen muchas formas de escribir CSS incluso frameworks te dan componentes personalizables.
+Algunas son:
+
+```
+CSS Plano
+Framework CSS
+Modulo CSS
+Componentes
+SASS
+Styled Components
+```
+
+## Instalar Tailwind
+
+Intalar:
+
+```
+npm install -D tailwindcss postcss autoprefixer
+```
+
+Luego hay que crear los archivos de configuracion:
+
+```
+npx tailwindcss init
+```
+
+Luego en el `index.css` hay que agregar dependencias de tailwind:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+En el `tailwind.config.js` tenemos que agregas los paths de los archivos que van a usar tailwind:
+
+```
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.jsx"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+```
+
+Que son el index.html y todos los archivos dentro de `src` que tengan extension `.jsx`
+
+## Extensiones para Tailwind
+
+Son:
+Tailwind Intellsense
+CSS Peek
