@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 
 const Form = () => {
-	const [nombre, setNombre] = useState("Pancho");
+	const [datos, setDatos] = useState({
+		nombre: "",
+		propietario: "",
+		email: "",
+		fecha: "",
+		sintomas: "",
+	});
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log("Enviar Formulario");
 	};
-
+	const handleChange = (e) => {
+		setDatos((state) => ({
+			...state,
+			[e.target.name]: e.target.value,
+		}));
+	};
+	console.log(datos);
 	return (
 		<div className="md:w-1/2 lg:w-2/5 mx-1">
 			<h2 className="font-black text-3xl text-center">
@@ -32,8 +44,9 @@ const Form = () => {
 						type="text"
 						placeholder="Nombre de la mascota"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
-						value={nombre}
-						onChange={(e) => setNombre(e.target.value)}
+						value={datos.nombre}
+						name="nombre"
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="mb-5">
@@ -48,6 +61,9 @@ const Form = () => {
 						type="text"
 						placeholder="Nombre del Propietario"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
+						value={datos.propietario}
+						name="propietario"
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="mb-5">
@@ -62,6 +78,9 @@ const Form = () => {
 						type="email"
 						placeholder="Email Contacto Propietario"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
+						value={datos.email}
+						name="email"
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="mb-5">
@@ -75,6 +94,9 @@ const Form = () => {
 						id="alta"
 						type="date"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
+						value={datos.fecha}
+						name="fecha"
+						onChange={handleChange}
 					/>
 				</div>
 				<div className="mb-5">
@@ -90,6 +112,9 @@ const Form = () => {
 						rows="5"
 						placeholder="Describe los sintomas"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
+						value={datos.sintomas}
+						name="sintomas"
+						onChange={handleChange}
 					></textarea>
 				</div>
 				<input
