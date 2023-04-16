@@ -167,3 +167,22 @@ Basicos:
 - useDebugValue
 
 Tambien se puede crear propios hooks,de esta forma se puede separar el codigo en funciones reutilizables.
+
+## Que es el STATE o estado
+
+Es basicamente una variable con informacion relevante, que puede perteneces solo en el componente o se puede compartir.
+
+```
+import {useState} from "react"
+
+const [cliente, setCliente] = useState({})
+```
+
+React reacciona en base al state, este se renderiza y actualiza cuando este cambia, siempre se modifica con el set.
+
+## Reglas de los Hooks
+
+Se deben colocar antes del return y antes de las funciones.
+No se debe de colocar dentro de condicionales y tampoco dentro de returns.
+Siempre deben haber la misma cantidad de hooks no se pueden tener de manera condicional.
+No pueden ir por fuera del componente.
