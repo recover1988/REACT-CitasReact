@@ -1,7 +1,7 @@
 const Header = () => {
 	return (
 		<>
-			<h1 className="text-4xl font-bold uppercase mt-5 text-indigo-700">
+			<h1 className="text-4xl font-bold uppercase">
 				Desde Header
 			</h1>
 		</>
