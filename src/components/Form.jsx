@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const Form = () => {
-	const [nombre, setNombre] = useState("Hook");
+	const [nombre, setNombre] = useState("Pancho");
 
 	return (
 		<div className="md:w-1/2 lg:w-2/5 mx-1">
@@ -28,6 +28,8 @@ const Form = () => {
 						type="text"
 						placeholder="Nombre de la mascota"
 						className="bg-color3 border-2 border-color4 w-full p-2 mt-2 placeholder-color2 rounded-md"
+						value={nombre}
+						onChange={(e) => setNombre(e.target.value)}
 					/>
 				</div>
 				<div className="mb-5">
