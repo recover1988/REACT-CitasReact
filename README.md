@@ -186,3 +186,20 @@ Se deben colocar antes del return y antes de las funciones.
 No se debe de colocar dentro de condicionales y tampoco dentro de returns.
 Siempre deben haber la misma cantidad de hooks no se pueden tener de manera condicional.
 No pueden ir por fuera del componente.
+
+## Eventos
+
+Es muy similar a los de javascript, usan camelCase, todos los eventos en js estan disponibles en react.
+Sintaxis:
+
+```
+HTML:
+<button onclick="descargarPedido90()" >
+  Descargar Pedidos
+</button>
+
+JSX:
+<button onClick={ descargarPedido90() } >
+  Descargar Pedidos
+</button>
+```

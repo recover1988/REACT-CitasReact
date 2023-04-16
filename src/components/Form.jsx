@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 
 const Form = () => {
 	const [nombre, setNombre] = useState("Pancho");
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("Enviar Formulario");
+	};
 
 	return (
 		<div className="md:w-1/2 lg:w-2/5 mx-1">
@@ -13,7 +17,7 @@ const Form = () => {
 				<span className="text-color6 font-bold">Administralos</span>
 			</p>
 			<form
-				action=""
+				onSubmit={handleSubmit}
 				className="bg-color3 shadow-lg rounded-lg px-5 py-10 mb-10"
 			>
 				<div className="mb-5">
