@@ -26,4 +26,22 @@ Este puede ser div o fragments.
 Antes del return se puede crear funciones o validaciones. Estas se pueden colocar en expresiones con las llaves {} para que sea tratado como JS en el return.
 Dentro de las llaves se pueden colocar ternarios, para asi ejecutarlos, no se puede utilizar condicionales como if.
 
+## Componente
+Se puede crear varios componentes en un mismo archivos pero es mejro hacer lo en archivos separados.
+Los archivos de componentes deben empezar en mayuscula, y tener la extension en `.jsx` asi lo requiere `vite`.
+Para mostrarlo hay que importarlo:
+```
+import Header from "./components/Header";
 
+function App() {
+
+	return (
+		<div className="App">
+			<h1>Hola mundo</h1>
+      <Header />
+		</div>
+	);
+}
+
+export default App;
+```
