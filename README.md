@@ -117,8 +117,28 @@ Son:
 Tailwind Intellsense
 CSS Peek
 
-### Algunas clases
-- `md:` media query para pantallas medianas
-- `lg:` large query para pantallas grandes
-- `transition-all` para agregar animacion
-- `font-black` para agregar ancho a las letras
+### Tips
+
+- `md:` media query para pantallas medianas.
+- `lg:` large query para pantallas grandes.
+- `transition-all` para agregar animacion.
+- `font-black` para agregar ancho a las letras.
+- En las etiquetas label usar el HTMLfor para linkearlo con el input atraves del id, esto sirve para dar mayor accesibilidad.
+
+- `overflow-y-scroll` para activar las scroll bar en y
+
+### tailwind scrollbar
+
+Para modificar los colores y grosor de la barra de scroll usar el:
+
+```
+yarn add -D tailwind-scrollbar
+or
+npm install --save-dev tailwind-scrollbar
+
+Add it to the plugins array of your Tailwind config.
+plugins: [
+    // ...
+    require('tailwind-scrollbar'),
+],
+```

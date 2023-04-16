@@ -2,11 +2,11 @@ import React from "react";
 
 const Form = () => {
 	return (
-		<div className="md:w-1/2 lg:w-2/5">
+		<div className="md:w-1/2 lg:w-2/5 mx-1">
 			<h2 className="font-black text-3xl text-center">
 				Seguimiento de Pacientes
 			</h2>
-			<p className="text-lg mt-5 text-center  mb-7">
+			<p className="text-xl mt-5 text-center  mb-10">
 				Añade Pacientes y{" "}
 				<span className="text-color6 font-bold">Administralos</span>
 			</p>

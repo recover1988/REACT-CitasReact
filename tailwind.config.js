@@ -7,14 +7,14 @@ export default {
 			serif: ["Merriweather", "serif"],
 		},
 		colors: {
-		color1:'#ffffff',	
+		color1:'#e5e5e5',	
 		color2:'#d9d9d9',	
-		color3:'#3c6e71',	
+		color3:'#247b7b',	
 		color4:'#284b63',	
-		color5:'#353535',	
+		color5:'#001219',	
 		color6:'#ff595e',	
 		},
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar')],
 };
