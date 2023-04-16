@@ -142,3 +142,28 @@ plugins: [
     require('tailwind-scrollbar'),
 ],
 ```
+
+# REACT HOOKS
+
+## Que son?
+
+Es una api sencilla que permite crear todo tipo de aplicaciones con estos, estan disponibles desde la version 16, previo a ello se usaban clases para crear y modificar el estado, con los hooks no es necesario.
+Estos se dividen en basicos y adicionales.
+
+## Categorias de Hooks
+
+Basicos:
+
+- useState
+- useEffect
+- useContext
+  Adicionales:
+- useReducer
+- useCallback
+- useMemo
+- useRef
+- useImperativeHandle
+- useLayoutEffect
+- useDebugValue
+
+Tambien se puede crear propios hooks,de esta forma se puede separar el codigo en funciones reutilizables.
