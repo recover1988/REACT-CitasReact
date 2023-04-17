@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
+import generarId from "../utils/generadorId";
 
 const Form = ({ setPacientes }) => {
 	const [datos, setDatos] = useState({
@@ -8,6 +9,7 @@ const Form = ({ setPacientes }) => {
 		email: "",
 		fecha: "",
 		sintomas: "",
+		id: generarId(),
 	});
 	const [error, setError] = useState(false);
 
@@ -32,6 +34,7 @@ const Form = ({ setPacientes }) => {
 			email: "",
 			fecha: "",
 			sintomas: "",
+			id: generarId(),
 		}));
 		console.log("Enviar Formulario");
 	};
@@ -55,7 +58,11 @@ const Form = ({ setPacientes }) => {
 				onSubmit={handleSubmit}
 				className="bg-color3 shadow-lg rounded-lg px-5 py-10 mb-10"
 			>
-				{error && <Error><p>Todos los campos son obligatorios</p></Error>}
+				{error && (
+					<Error>
+						<p>Todos los campos son obligatorios</p>
+					</Error>
+				)}
 				<div className="mb-5">
 					<label
 						htmlFor="mascota"

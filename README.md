@@ -253,3 +253,12 @@ const Error = ({ children }) => {
 export default Error;
 ```
 La ventaja de esto es que se le puede pasar mas codigo html.
+## Generar una lista dinamicamente
+Los elementos deben tener id unicos para que react pueda renderizar correctamente para ello creamos una funcion que genera id aleatorios:
+```
+	const generarId = () => {
+		const random = Math.random().toString(36).substring(0, 2);
+		const fecha = Date.now().toString(36);
+		return random + fecha;
+	};
+```

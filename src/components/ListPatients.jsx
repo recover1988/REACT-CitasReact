@@ -1,6 +1,6 @@
+import Error from "./Error";
 import Patient from "./Patient";
-
-const ListPatients = () => {
+const ListPatients = ({ pacientes }) => {
 	return (
 		<div className="md:w-1/2 lg:w-3/5 md:h-screen mx-5 px-5 h-screen">
 			<h2 className="font-black text-3xl text-center">Listado de Pacientes</h2>
@@ -9,11 +9,18 @@ const ListPatients = () => {
 				<span className="text-color6 font-bold ">Pacientes y Citas</span>
 			</p>
 			<div className=" h-full overflow-y-scroll  scrollbar-thumb-color6 scrollbar-track-color4 scrollbar-thin">
-				<Patient />
-				<Patient />
-				<Patient />
-				<Patient />
-				<Patient />
+				{pacientes.length > 0 ? (
+					pacientes.map((p) => (
+						<Patient
+							paciente={p}
+							key={p.id}
+						/>
+					))
+				) : (
+					<Error>
+						<p>No hay datos</p>
+					</Error>
+				)}
 			</div>
 		</div>
 	);
