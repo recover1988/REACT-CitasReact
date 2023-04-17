@@ -230,3 +230,26 @@ setPacientes((state) => [...state, datos]);
 ```
 
 Con esta funcion tomamos el state y le hacemo una copia, y le agregamos el objeto.
+
+## Pasar props mediante children
+
+La palabra children es una reservada y se usa para pasar cualquier tipo de elemento hacia el hijo.
+
+```
+{error && <Error><p>Todos los campos son obligatorios</p></Error>}
+```
+
+Y en el componente `Error` podemos usarla de la siguiente manera:
+
+```
+const Error = ({ children }) => {
+	return (
+		<div className="bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-lg">
+			{children}
+		</div>
+	);
+};
+
+export default Error;
+```
+La ventaja de esto es que se le puede pasar mas codigo html.
