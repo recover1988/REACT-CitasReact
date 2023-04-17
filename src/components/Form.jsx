@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Form = () => {
+const Form = ({ setPacientes }) => {
 	const [datos, setDatos] = useState({
 		nombre: "",
 		propietario: "",
@@ -21,7 +21,17 @@ const Form = () => {
 		}
 
 		setError(false);
+		// Agregamos los datos al array de Pacientes
+		setPacientes((state) => [...state, datos]);
 
+		// Reiniciar el objeto datos
+		setDatos((state) => ({
+			nombre: "",
+			propietario: "",
+			email: "",
+			fecha: "",
+			sintomas: "",
+		}));
 		console.log("Enviar Formulario");
 	};
 	const handleChange = (e) => {

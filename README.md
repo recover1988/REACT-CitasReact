@@ -216,3 +216,17 @@ Sintaxis:
 ```
 
 Para acceder a los datos desde el hijo usamos la palabra reservada `props` y el nombre de la variable o funcion que se le paso, o tambien podemos hacer un destructuring con los nombres de las variables que necesitamos.
+
+### Pasar valores de hijo a padre
+
+Para estos podemos usar una funcion que tome un valor del hijo y la ejecuta o use en el padre.
+
+## Modificar el state
+
+Para modificar el estado siempre hay que usar metodos que no modifiquen el valor original:
+
+```
+setPacientes((state) => [...state, datos]);
+```
+
+Con esta funcion tomamos el state y le hacemo una copia, y le agregamos el objeto.
