@@ -1,9 +1,10 @@
-const Header = () => {
+const Header = (props) => {
+	const variableHeader = true;
+	props.toma1valor(variableHeader);
 	return (
 		<>
 			<h1 className="font-black text-5xl text-center md:w-2/3 mx-auto">
-				Seguimiento Pacientes {" "} 
-				<span className="text-color6">Veterinaria</span>
+				Seguimiento Pacientes <span className="text-color6">Veterinaria </span>
 			</h1>
 		</>
 	);

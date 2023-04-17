@@ -203,3 +203,16 @@ JSX:
   Descargar Pedidos
 </button>
 ```
+
+## Props
+
+Es la forma de pasar variables o funciones de otros componentes. Se pasan del padre al hijo, nunca del hijo al padre.
+Sintaxis:
+
+```
+<Header
+ nombreProp={datos o funciones}
+/>
+```
+
+Para acceder a los datos desde el hijo usamos la palabra reservada `props` y el nombre de la variable o funcion que se le paso, o tambien podemos hacer un destructuring con los nombres de las variables que necesitamos.
