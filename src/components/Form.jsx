@@ -27,7 +27,6 @@ const Form = ({ setPacientes, paciente, setPaciente }) => {
     // Validar el formulario
     if (Object.values(datos).includes("")) {
       setError(true);
-      console.log("Hay al menos un campo vacio");
       return;
     }
 
@@ -56,8 +55,6 @@ const Form = ({ setPacientes, paciente, setPaciente }) => {
       fecha: "",
       sintomas: "",
     }));
-
-    console.log("Enviar Formulario");
   };
   const handleChange = (e) => {
     setDatos((state) => ({
@@ -65,7 +62,6 @@ const Form = ({ setPacientes, paciente, setPaciente }) => {
       [e.target.name]: e.target.value,
     }));
   };
-  // console.log(datos);
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-1">
       <h2 className="font-black text-3xl text-center">

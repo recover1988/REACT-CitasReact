@@ -1,34 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import ListPatients from "./components/ListPatients";
 import generarId from "./utils/generadorId";
 function App() {
-  const [pacientes, setPacientes] = useState([
-    {
-      nombre: "pancho",
-      propietario: "Eric",
-      email: "eric@gmail.com",
-      fecha: "2023-04-30",
-      sintomas:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, libero cupiditate eveniet a, ullam vero alias magnam ratione placeat ad voluptatem repudiandae. Tempore laboriosam inventore asperiores maxime ea facilis et.",
-      id: generarId(),
-    },
-    {
-      nombre: "felix",
-      propietario: "Lizeth",
-      email: "lizeth@gmail.com",
-      fecha: "2023-04-22",
-      sintomas:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, libero cupiditate eveniet a, ullam vero alias magnam ratione placeat ad voluptatem repudiandae. Tempore laboriosam inventore asperiores maxime ea facilis et.",
-      id: generarId() + "sdas",
-    },
-  ]);
+  const [pacientes, setPacientes] = useState(
+    JSON.parse(localStorage.getItem("pacientes")) ?? []
+  );
   const [paciente, setPaciente] = useState({});
+
+  useEffect(() => {
+    localStorage.setItem("pacientes", JSON.stringify(pacientes));
+  }, [pacientes]);
 
   const eliminarPaciente = (id) => {
     setPacientes((state) => state.filter((p) => p.id !== id));
-    console.log("eliminiar", id);
   };
 
   return (
