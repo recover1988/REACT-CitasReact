@@ -1,9 +1,7 @@
 import Error from "./Error";
 import Patient from "./Patient";
 
-const ListPatients = ({ pacientes, setPaciente }) => {
-
-
+const ListPatients = ({ pacientes, setPaciente, eliminarPaciente }) => {
   return (
     <div className="md:w-1/2 lg:w-3/5 md:h-screen mx-5 px-5 h-screen">
       <h2 className="font-black text-3xl text-center">Listado de Pacientes</h2>
@@ -18,6 +16,7 @@ const ListPatients = ({ pacientes, setPaciente }) => {
               key={p.id}
               paciente={p}
               setPaciente={setPaciente}
+              eliminarPaciente={eliminarPaciente}
             />
           ))
         ) : (

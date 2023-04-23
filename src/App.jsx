@@ -26,7 +26,11 @@ function App() {
   ]);
   const [paciente, setPaciente] = useState({});
 
-  console.log(pacientes);
+  const eliminarPaciente = (id) => {
+    setPacientes((state) => state.filter((p) => p.id !== id));
+    console.log("eliminiar", id);
+  };
+
   return (
     <div className="container mx-auto mt-20">
       <Header />
@@ -34,10 +38,12 @@ function App() {
         <Form
           paciente={paciente}
           setPacientes={setPacientes}
+          setPaciente={setPaciente}
         />
         <ListPatients
           pacientes={pacientes}
           setPaciente={setPaciente}
+          eliminarPaciente={eliminarPaciente}
         />
       </div>
     </div>

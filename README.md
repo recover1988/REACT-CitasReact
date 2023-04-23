@@ -294,3 +294,5 @@ Algunos de sus usos son:
 ## Comprobar si un Objeto esta vacio
 
 Se puede hacer con `Object.keys.length > 0` esto resuelve en un booleano.
+
+## LocalStorage

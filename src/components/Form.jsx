@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import Error from "./Error";
 import generarId from "../utils/generadorId";
 
-const Form = ({ setPacientes, paciente }) => {
+const Form = ({ setPacientes, paciente, setPaciente }) => {
   const [datos, setDatos] = useState({
     nombre: "",
     propietario: "",
     email: "",
     fecha: "",
     sintomas: "",
-    id: generarId(),
   });
   const [error, setError] = useState(false);
 
@@ -34,8 +33,21 @@ const Form = ({ setPacientes, paciente }) => {
 
     setError(false);
     // Agregamos los datos al array de Pacientes
-    setPacientes((state) => [...state, datos]);
-
+    if (paciente.id) {
+      // Editando el registro
+      datos.id = paciente.id;
+      // en el setPacientes busca el objeto con el id y lo cambia por el nuevo objeto actualizado
+      setPacientes((state) =>
+        state.map((pacienteState) =>
+          pacienteState.id === paciente.id ? datos : pacienteState
+        )
+      );
+      setPaciente({});
+    } else {
+      // nuevo registro
+      datos.id = generarId();
+      setPacientes((state) => [...state, datos]);
+    }
     // Reiniciar el objeto datos
     setDatos((state) => ({
       nombre: "",
@@ -43,8 +55,8 @@ const Form = ({ setPacientes, paciente }) => {
       email: "",
       fecha: "",
       sintomas: "",
-      id: generarId(),
     }));
+
     console.log("Enviar Formulario");
   };
   const handleChange = (e) => {
@@ -160,7 +172,7 @@ const Form = ({ setPacientes, paciente }) => {
         <input
           type="submit"
           className="bg-blue-700 w-full p-3 uppercase text-color1 font-bold rounded-md hover:bg-blue-800 cursor-pointer transition-all"
-          value="Agregar Paciente"
+          value={paciente.id ? "Editar Paciente" : "Agregar Paciente"}
         />
       </form>
     </div>
