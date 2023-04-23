@@ -150,7 +150,7 @@ const Form = ({ setPacientes }) => {
 				</div>
 				<input
 					type="submit"
-					className="bg-color6 w-full p-3 uppercase text-color1 font-bold rounded-md hover:bg-opacity-80 cursor-pointer transition-all"
+					className="bg-blue-700 w-full p-3 uppercase text-color1 font-bold rounded-md hover:bg-blue-800 cursor-pointer transition-all"
 					value="Agregar Paciente"
 				/>
 			</form>

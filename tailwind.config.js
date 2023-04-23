@@ -9,7 +9,7 @@ export default {
 		extend: {
 			colors: {
 				color1: "#e5e5e5",
-				color2: "#d9d9d9",
+				color2: "#d6d6d6",
 				color3: "#247b7b",
 				color4: "#284b63",
 				color5: "#001219",
