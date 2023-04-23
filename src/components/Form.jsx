@@ -13,17 +13,14 @@ const Form = ({ setPacientes, paciente }) => {
   });
   const [error, setError] = useState(false);
 
-// UseEffect
-useEffect(() => {
- console.log(paciente)
-}, [paciente])
+  // UseEffect
+  useEffect(() => {
+    if (Object.keys(paciente).length > 0) {
+      setDatos(paciente);
+    }
+  }, [paciente]);
 
-
-
-//  ---- 
-
-
-
+  //  ----
 
   const handleSubmit = (e) => {
     e.preventDefault();

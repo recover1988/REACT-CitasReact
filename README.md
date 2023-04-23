@@ -291,4 +291,6 @@ Algunos de sus usos son:
 
 3. Sin dependencias se ejecuta una vez.
 
+## Comprobar si un Objeto esta vacio
 
+Se puede hacer con `Object.keys.length > 0` esto resuelve en un booleano.
