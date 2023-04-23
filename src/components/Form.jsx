@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Error from "./Error";
 import generarId from "../utils/generadorId";
 
-const Form = ({ setPacientes }) => {
+const Form = ({ setPacientes, paciente }) => {
   const [datos, setDatos] = useState({
     nombre: "",
     propietario: "",
@@ -12,6 +12,18 @@ const Form = ({ setPacientes }) => {
     id: generarId(),
   });
   const [error, setError] = useState(false);
+
+// UseEffect
+useEffect(() => {
+ console.log(paciente)
+}, [paciente])
+
+
+
+//  ---- 
+
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

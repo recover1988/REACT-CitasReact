@@ -40,12 +40,12 @@ import Header from "./components/Header";
 
 function App() {
 
-	return (
-		<div className="App">
-			<h1>Hola mundo</h1>
+ return (
+  <div className="App">
+   <h1>Hola mundo</h1>
       <Header />
-		</div>
-	);
+  </div>
+ );
 }
 
 export default App;
@@ -243,22 +243,52 @@ Y en el componente `Error` podemos usarla de la siguiente manera:
 
 ```
 const Error = ({ children }) => {
-	return (
-		<div className="bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-lg">
-			{children}
-		</div>
-	);
+ return (
+  <div className="bg-red-800 text-white text-center p-3 uppercase font-bold mb-3 rounded-lg">
+   {children}
+  </div>
+ );
 };
 
 export default Error;
 ```
+
 La ventaja de esto es que se le puede pasar mas codigo html.
+
 ## Generar una lista dinamicamente
+
 Los elementos deben tener id unicos para que react pueda renderizar correctamente para ello creamos una funcion que genera id aleatorios:
+
 ```
-	const generarId = () => {
-		const random = Math.random().toString(36).substring(0, 2);
-		const fecha = Date.now().toString(36);
-		return random + fecha;
-	};
+ const generarId = () => {
+  const random = Math.random().toString(36).substring(0, 2);
+  const fecha = Date.now().toString(36);
+  return random + fecha;
+ };
 ```
+
+## useEffect
+
+Siempre es un callback, que es ejecuta cuando un state cambia o cuando el componenete esta listo.
+Al ejecutarse cuando el componente esta listo, se coloca las consultas a API o LocalStorage.
+Se puede pasar una dependecia para que se actualize o ejecute cuando cambia la dependencia.
+
+```
+import { useEffect } from "react";
+
+useEffect( () => {
+ console.log('El Componente esta listo');
+}, [] )
+```
+
+### Usos
+
+Algunos de sus usos son:
+
+1. Escuchar los cambios de una propiedad en alguna parte del State.
+
+2. Se puede tener multiples useEffect.
+
+3. Sin dependencias se ejecuta una vez.
+
+
